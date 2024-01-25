@@ -1,0 +1,49 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'bin/**/*'
+    - 'db/schema.rb'
+
+Lint/MissingSuper:
+  Exclude:
+    - 'app/components/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/**/*'
+    - 'db/**/*'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/**/*'
+
+Rails/CreateTableWithTimestamps:
+  Enabled: false
+
+Rails/FilePath:
+  EnforcedStyle: arguments
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
