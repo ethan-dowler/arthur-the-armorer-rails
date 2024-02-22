@@ -64,12 +64,22 @@ Aside from the actual gameplay, I've been very interested in building a game wit
 - Actions
   - basic attack (2 AP)
     - some weapons may modify AP costs
-    - first attack with a dagger costs 1 AP
-    - maul can use 3 AP for heavy swing
+      - first attack with a dagger costs 1 AP
+      - maul can use 3 AP for heavy swing
+    - some skills may modify AP costs in certain circumstances
+      - Anti-Air: your first attack against a flying enemy costs 1 AP
+      - Precision Strike: spend 3 AP to make an attack that ignores the target's armor
   - defend (2 AP)
   - use item (1-3 AP)
+    - cost depends on the item
+    - small potion = 1 AP
+    - stat enhancer = 2 AP
+    - party member revive = 3 AP
   - retreat (3 AP)
+    - chance at failure
+    - multiple party members using retreat in same round improves chance
   - special techniques (1-3 AP)
+    - unique to each character
 
 ## Feature Expansions
 
