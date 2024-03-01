@@ -1,4 +1,4 @@
 @function spaces($n) {
   $pixels: 8 * $n;
-  @return "#{$pixels}px";
+  @return #{$pixels}px;
 }

@@ -1,12 +1,12 @@
 .Button {
-  @include rounded;
+  border-radius: $border-radius-small;
   padding: spaces(1) spaces(2);
   display: inline-block;
   text-align: center;
   font-weight: bold;
-  font-weight: bold;
   color: $white;
   background-color: $blue-500;
+  cursor: pointer;
 
   &:hover {
     background-color: $blue-700;

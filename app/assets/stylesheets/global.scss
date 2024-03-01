@@ -1,35 +1,15 @@
-/* Global */
 *,
-*::after,
-*::before {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-/* content fills page */
 html {
-  height: 100%;
   font-family: 'Inter var', Arial, Helvetica, sans-serif;
 }
 
-/* main content area */
-.Body {
-  height: 100%;
+body {
   padding: spaces(2) spaces(1);
   /* TODO: allow for color themes! */
   background-color: $slate-500;
-}
-
-.Main {
-  @include rounded;
-  @include shadow-md;
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  border: 4px $gray-300;
-  padding: spaces(1);
-  width: auto;
-  height: 100%;
-  max-width: 512px;
-  overflow-y: auto;
-  background-color: $white;
 }

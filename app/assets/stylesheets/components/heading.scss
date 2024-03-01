@@ -1,0 +1,8 @@
+.Heading {
+  font-weight: $font-weight-semibold;
+
+  &--h1 {
+    margin-bottom: spaces(2);
+    font-size: $font-size-h1;
+  }
+}
