@@ -1,3 +1,3 @@
 class Account < ApplicationRecord
-  has_many :save_files
+  has_many :playthroughs, dependent: :destroy
 end

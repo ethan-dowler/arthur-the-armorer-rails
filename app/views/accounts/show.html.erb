@@ -1,0 +1,29 @@
+<%= render HeadingComponent.new(title: account.nickname) %>
+
+
+<% if account.playthroughs.exists? %>
+  <div>
+    Choose a playthrough or start a new game.
+
+    <ul>
+      <%= account.playthroughs.find_each do |playthrough| %>
+        <li>
+          Playthrough <%= playthrough.number %>
+          <%= link_to(
+            "Load Game",
+            playthrough_path(playthrough),
+            class: "Button Button--compact"
+          ) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div>
+  <%= button_to(
+    "New Game",
+    account_playthroughs_path(account),
+    class: "Button Button--compact Button--green"
+  ) %>
+</div>

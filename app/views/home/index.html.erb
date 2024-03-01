@@ -1,4 +1,13 @@
 <%= render HeadingComponent.new(title: "Arthur the Armorer") %>
 
-<%= link_to "New Game", "#", class: "Button" %>
-<%= link_to "Load Game", "#", class: "Button" %>
+<div>
+  Choose an account to get started
+
+  <%= Account.find_each do |account| %>
+    <%= button_to(
+      account.nickname,
+      choose_account_path(account),
+      class: "Button"
+    ) %>
+  <% end %>
+</div>
