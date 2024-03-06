@@ -1,0 +1,17 @@
+<%= turbo_frame_tag :character_summary, class: "CharacterSummary" do %>
+  <div class="CharacterSummary-name">
+    <%= name %>
+  </div>
+
+  <%= render(
+    ProgressBarComponent.new(
+      name: :player_hp,
+      label: "HP",
+      previous_value: previous_hp,
+      current_value: current_hp,
+      max_value: max_hp,
+      color: :red,
+      show_value: true
+    )
+  ) %>
+<% end %>

@@ -1,0 +1,36 @@
+<style>
+  @keyframes fillBar-<%= name %> {
+    from {
+      width: <%= start_fill_percent %>%;
+    }
+    to {
+      width: <%= end_fill_percent %>%;
+    }
+  }
+  #progressBar-<%= name %> {
+    width: <%= start_fill_percent %>;
+    animation: fillBar-<%= name %> 300ms ease-out forwards;
+  }
+</style>
+
+<div class="ProgressBar <%= "ProgressBar--withValue" if show_value? %>">
+  <span class="ProgressBar-label">
+    <%= label %>
+  </span>
+
+  <div class="ProgressBar-fill">
+    <div class="ProgressBar-fillPool">
+      <div
+        id="progressBar-<%= name %>"
+        class="ProgressBar-fillColor <%= fill_color_class %> <%= bar_height_class %>"
+      >
+      </div>
+    </div>
+
+    <% if show_value? %>
+      <div class="ProgressBar-value">
+        <%= current_value %> / <%= max_value %>
+      </div>
+    <% end %>
+  </div>
+</div>

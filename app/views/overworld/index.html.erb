@@ -1,5 +1,5 @@
 <%= turbo_frame_tag :game_screen do %>
   <%= render HeadingComponent.new(title: "Overworld", tag: :h2) %>
 
-  <p><%= playthrough.character.name %></p>
+  <%= render CharacterSummaryComponent.new(playthrough.character) %>
 <% end %>
