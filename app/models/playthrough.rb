@@ -1,16 +1,11 @@
 class Playthrough < ApplicationRecord
-  belongs_to :account
+  has_one :character, dependent: :destroy
 
   before_create :set_playthrough_number
 
   private
 
   def set_playthrough_number
-    self.number =
-      if account.playthroughs.exists?
-        account.playthroughs.maximum(:number) + 1
-      else
-        1
-      end
+    self.number = Playthrough.maximum(:number).to_i + 1
   end
 end

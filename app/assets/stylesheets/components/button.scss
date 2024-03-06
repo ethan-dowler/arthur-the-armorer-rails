@@ -1,7 +1,8 @@
 .Button {
+  display: inline-block;
+  border: 0;
   border-radius: $border-radius-small;
   padding: spaces(1) spaces(2);
-  display: inline-block;
   text-align: center;
   font-weight: bold;
   color: $white;
@@ -34,5 +35,6 @@
 
   &--icon {
     padding: spaces(1);
+    line-height: 1;
   }
 }

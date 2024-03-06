@@ -1,12 +1,17 @@
-<div>
-  Account: <%= playthrough.account.nickname %>
-</div>
-<div>
-  Playthrough #<%= playthrough.number %>
+<div class="TopBar">
+  <div class="TopBar-title">
+    Playthrough <%= playthrough.number %>
+  </div>
+
+  <div class="TopBar-actions">
+    <%= link_to root_path, class: "Button Button--icon Button--red" do %>
+      <%= render "icons/back" %>
+    <% end %>
+  </div>
 </div>
 
 <hr />
 
-<div>
-  TODO: display game info
-</div>
+<%= turbo_frame_tag :game_screen do %>
+  <%= render GameScreenComponent.new(playthrough) %>
+<% end %>

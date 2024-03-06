@@ -1,11 +1,13 @@
 class PlaythroughsController < ApplicationController
   helper_method :playthrough
 
+  def index; end
+
   def show; end
 
   def create
-    account = Account.find(params[:account_id])
-    new_playthrough = account.playthroughs.create!
+    new_playthrough = Playthrough.create!
+
     redirect_to playthrough_path(new_playthrough)
   end
 

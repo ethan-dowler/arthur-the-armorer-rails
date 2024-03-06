@@ -1,13 +1,29 @@
-<%= render HeadingComponent.new(title: "Arthur the Armorer") %>
+<%= render HeadingComponent.new(title: "J-RPG Rails") %>
+
+Choose a playthrough or start a new game.
+
+<hr/>
+
+<%= Playthrough.all.find_each do |playthrough| %>
+  <div class="mb-2">
+    <%= link_to(
+      "Load",
+      playthrough_path(playthrough),
+      class: "Button Button--compact"
+    ) %>
+
+    Playthrough <%= playthrough.number %>
+    
+    <% if playthrough.character.present? %>
+      &ndash; <%= playthrough.character.name %>
+    <% end %>
+  </div>
+<% end %>
 
 <div>
-  Choose an account to get started
-
-  <%= Account.find_each do |account| %>
-    <%= button_to(
-      account.nickname,
-      choose_account_path(account),
-      class: "Button"
-    ) %>
-  <% end %>
+  <%= button_to(
+    "New Game",
+    playthroughs_path,
+    class: "Button Button--compact Button--green"
+  ) %>
 </div>

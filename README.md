@@ -1,14 +1,14 @@
-# Arthur the Armorer
+# The Blacksmith's Apprentice
 
 Following my (successful) experiment of building a [dungeon crawler in Rails](https://github.com/ethan-dowler/dungeon-crawl-rails), I wanted to take things a step further and see if I could build a story-driven RPG with Rails.
 
 ## Premise
 
-Arthur is an apprentice in his father's blacksmith business. He dreams of taking over the business when he gros up.
+You are an apprentice to your father, a well-respected blacksmith. You dream of taking over the family business when you grow up.
 
-His life is flipped upside down when an evil creature destroys most of his town.
+Your life is flipped upside down when an evil creature destroys most of your hometown.
 
-He must work alongside the other townsfolk to rebuild the town and remove the evil creature from their land.
+You must work alongside the other townsfolk to rebuild the town and remove the evil creature from your land.
 
 ## Goals
 
@@ -33,7 +33,7 @@ Aside from the actual gameplay, I've been very interested in building a game wit
   - track time spent during campaign (in-game days)
   - talk to NPCs to get information or trigger narrative events
 - Dialogue
-  - NPCs respond when Arthur interacts with them
+  - NPCs respond when you interacts with them
   - allow player to choose how to respond to NPC, when appropriate
 - Party system
   - add party members to the roster through the course of the campaign
@@ -46,7 +46,7 @@ Aside from the actual gameplay, I've been very interested in building a game wit
 - Equipment Durability System
   - this is a game about an armorer, after all!
   - weapons and armor degrade with use
-  - Arthur can repair equipment at a forge (possibly away from a forge with perks)
+  - Repair equipment at a forge (possibly, in a limited capacity away from a forge with perks!)
 - Party Progression System with Skill Points (SP)
   - the party gains SP together in a "pool"
   - spend SP to unlock "perks" (i.e. new abilities and stat bonuses)
@@ -115,4 +115,4 @@ Aside from the actual gameplay, I've been very interested in building a game wit
 
 ## Contributing
 
-If you would like to start a conversation about this project, please create [a GitHub Issue](https://github.com/ethan-dowler/arthur-the-armorer-rails/issues) on this repo. Thanks!
+If you would like to start a conversation about this project, please create [a GitHub Issue](https://github.com/ethan-dowler/jrpg-rails/issues) on this repo. Thanks!

@@ -10,24 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_22_052419) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_05_211735) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "accounts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "nickname", null: false
+  create_table "characters", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "playthrough_id", null: false
+    t.string "name", null: false
+    t.integer "current_hp", default: 1, null: false
+    t.integer "skill_points", default: 0, null: false
+    t.integer "base_mind", default: 1, null: false
+    t.integer "base_body", default: 1, null: false
+    t.integer "base_spirit", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["playthrough_id"], name: "index_characters_on_playthrough_id"
   end
 
   create_table "playthroughs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "account_id", null: false
     t.integer "number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_playthroughs_on_account_id"
   end
 
-  add_foreign_key "playthroughs", "accounts"
+  add_foreign_key "characters", "playthroughs"
 end

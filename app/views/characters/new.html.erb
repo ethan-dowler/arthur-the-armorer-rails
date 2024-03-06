@@ -1,0 +1,32 @@
+<%= turbo_frame_tag :game_screen do %>
+  <%= render HeadingComponent.new(title: "Create Character", tag: :h2) %>
+
+  <p>
+    Assign up to 6 points to your base attributes.
+  </p>
+
+  <p>
+    All attributes start at 1.
+
+    No attribute may exceed 5.
+  </p>
+
+  <hr/>
+
+  <%# TODO: hook a Stimulus controller up to this to enforce 6 assignable skill points and show remaining points %>
+  <%= form_with model: [:playthrough, Character.new], class: "Form" do |form| %>
+    <div class="Form-field">
+      <%= form.label :name, class: "Form-label" %>
+      <%= form.text_field :name, class: "Form-input" %>
+    </div>
+
+    <% %i[base_mind base_body base_spirit].each do |attribute| %>
+      <div class="Form-field">
+        <%= form.label attribute, class: "Form-label" %>
+        <%= form.number_field attribute, class: "Form-input", min: 1, max: 5 %>
+      </div>
+    <% end %>
+    
+    <%= form.submit class: "Button" %>
+  <% end %>
+<% end %>

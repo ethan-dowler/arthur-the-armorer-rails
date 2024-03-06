@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
   root "home#index"
 
-  resources :accounts, only: %i[show] do
-    member do
-      post :choose
-    end
+  resources :playthroughs, only: %i[index show create] do
+    resources :characters, only: %i[new create]
 
-    resources :playthroughs, only: :create
+    resources :overworld, only: :index
   end
-
-  resources :playthroughs, only: :show
 end
