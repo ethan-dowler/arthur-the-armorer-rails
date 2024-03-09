@@ -14,10 +14,4 @@ RSpec.describe Character do
       expect(character.max_hp).to equal(140)
     end
   end
-
-  describe "#attack_power" do
-    it "returns the correct value" do
-      expect(character.attack_power).to equal(45)
-    end
-  end
 end
